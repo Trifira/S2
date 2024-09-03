@@ -1,13 +1,20 @@
 //no 1 - odd number and even number
 
-for (let i: number = 25; i > 0; i--){ //odd number
-    if(i % 2 === 0)break;
-    console.log(i +" --ini adalah nilai ganjil");
+const i : number = 25;
+
+//odd number
+    if(i % 2 === 0){
+    console.log(i +" --ini adalah nilai genap");
+    }else{
+    console.log(i +" --ini adalah ini nilai ganjil");
 }
 
-for (let i: number = 2; i > 0; i--){ //even number
-    if(i % 2 !== 0)break;
-    console.log(i +" --ini adalah nilai genap");
+const i2 : number = 2;
+//even number
+    if(i2 % 2 === 0){
+    console.log(i2 +" --ini adalah nilai genap");
+    }else{
+    console.log(i2 + " --ini adalah nilai ganjil");
 }
 
 // no 2 - angka prima 
@@ -60,57 +67,63 @@ if (P2) {
 
 //no 3 pertambahan
 
-let N: number = 5; //nilai N yang akan dijumlahkan (diatur N nya disini)
+const N: number = 5; //nilai N yang akan dijumlahkan (diatur N nya disini)
 let tambah: number = 0; // hasil dari penjumlahan N
-
+let hasil: string = N + " ->";
 for (let i: number = 1; i <= N; i++) {
     tambah += i;
+    hasil += i === N ? ` ${i} = ${tambah}` : `${i} `; 
 }
 
-console.log("Jumlah dari 1 sampai " + N + " adalah " + tambah);;
+console.log("Jumlah dari 1  sampai " + hasil + " adalah " + tambah);;
 
 
 //no 4 faktorial
 
-let angka : number = 4; // angka yang akan di faktorialkan
-let angka2 : number = 6;
-let result : number = 1; // variabel penyimpan nilai hasil dari penjumlahan angka faktorial
-let result2 : number = 1;
+// const angka : number = 4; // angka yang akan di faktorialkan
+// const angka2 : number = 6;
+// let result : number = 1; // variabel penyimpan nilai hasil dari penjumlahan angka faktorial
+// let result2 : number = 1;
 
-for (let i: number = angka ; i > 0 ; i--){
-    console.log(i); //menampilkan faktorisasi dari i diatas
-     result *= i;
+// for (let i: number = angka - 1 ; i > 0 ; i--){
+//     console.log(i); //menampilkan faktorisasi dari i diatas
+//      result *= i;
 
-}
-console.log("faktorisasi dari angka "+ angka+" adalah "+ result);
+// }
+// console.log("faktorisasi dari angka "+ i +" adalah "+ result);
 
-for (let i: number = angka2 ; i > 0 ; i--){
+// for (let i: number = angka2 ; i > 0 ; i--){
+//     console.log(i);
+//      result2 *= i;
+
+// }
+// console.log("faktorisasi dari angka "+ angka2+" adalah "+ result2);
+
+const angka : number = 6;
+let _hasil = `${angka}! -> ${angka} x`;
+let fac = angka;
+for(let i = angka - 1; i >= 1; i--){
+    fac *= i;
     console.log(i);
-     result2 *= i;
-
+    console.log(fac);
+    _hasil += 1 === i ? `${i} = ${fac}` : `${i} x `;
 }
-console.log("faktorisasi dari angka "+ angka2+" adalah "+ result2);
+    console.log(_hasil);
 
 // no 5 angka fibonacci
 
-let nf: number = 16; // Ganti angka ini dengan jumlah angka Fibonacci yang ingin dicetak
+const nf: number = 16;
+let nf0: number = 0; // Ganti angka ini dengan jumlah angka Fibonacci yang ingin dicetak
 let nf1: number = 0; // Angka pertama dalam deret Fibonacci
 let nf2: number = 1; // Angka kedua dalam deret Fibonacci
-
-console.log("Nb angka pertama dari deret Fibonacci: " + nf);
-
-// Menampilkan angka pertama
-console.log(nf1);
-
-// Jika Nf lebih besar dari 1, tampilkan angka kedua
-if (nf > 1) {
-    console.log(nf2);
-}
+let next = `${nf} -> `;
 
 // Menampilkan sisa angka Fibonacci
-for (let i: number = 2; i < nf; i++) {
-    let next: number = nf1 + nf2;
+for (let i: number = 2; i <= nf; i++) {
+    nf0 = nf1 + nf2 ;
     nf1 = nf2;
-    nf2 = next;
-    console.log(next);
+    nf2 = nf0;
+    next += i === nf ? `${nf1}` : `${nf1}, `;
 }
+
+    console.log(next);
